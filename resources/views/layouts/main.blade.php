@@ -58,20 +58,17 @@
                     <div class="profile-desc">
                         <div class="profile-pic">
                             <div class="count-indicator">
-                                {{-- @if (auth()->user()->gambar)
+                                @if (auth()->user()->gambar)
                                     <img class="img-xs rounded-circle"
                                         src="{{ asset('storage/' . auth()->user()->gambar) }}">
                                 @else
                                     <img class="img-xs rounded-circle"
                                         src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
-                                @endif --}}
-                                <img class="img-xs rounded-circle"
-                                        src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
-                                <span class="count bg-success"></span>
+                                @endif
                             </div>
                             <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">Bayu Safutra</h5>
-                                <span>bayu.safutra</span>
+                                <h5 class="mb-0 font-weight-normal">{{ auth()->user()->name }}</h5>
+                                <span>{{ auth()->user()->username }}</span>
                             </div>
                         </div>
                         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i
@@ -292,7 +289,7 @@
                                     @endif --}}
                                     <img class="img-xs rounded-circle"
                                             src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Bayu Safutra
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ auth()->user()->name }}
                                     </p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>

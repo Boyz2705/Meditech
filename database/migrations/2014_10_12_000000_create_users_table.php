@@ -15,6 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('username')->unique();
+            $table->boolean('roleid')->default(false);
+            $table->boolean('status')->default(true);
+            $table->string('notelp')->unique();
+            $table->boolean('gender')->nullable();
+            $table->integer('otp')->nullable();
+            $table->string('gambar')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

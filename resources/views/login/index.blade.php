@@ -29,7 +29,7 @@
                             <h2 class="title">Login</h2>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="/login">
                                 @csrf
 
                                 <div class="form-row">
