@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,12 @@ Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('g
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+Route::get('/listpegawai', [PegawaiController::class, 'index'])->middleware('auth');
+Route::get('/createpegawaibaru', [PegawaiController::class, 'create'])->middleware('auth');
+Route::post('/createpegawaibaru', [PegawaiController::class, 'store'])->middleware('auth');
 
+Route::get('/listobat', [ObatController::class, 'index'])->middleware('auth');
+Route::get('/createobat', [ObatController::class, 'create'])->middleware('auth');
+Route::post('/createobat', [ObatController::class, 'store'])->middleware('auth');
