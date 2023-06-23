@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,7 @@ Route::post('/createpegawaibaru', [PegawaiController::class, 'store'])->middlewa
 Route::get('/listobat', [ObatController::class, 'index'])->middleware('auth');
 Route::get('/createobat', [ObatController::class, 'create'])->middleware('auth');
 Route::post('/createobat', [ObatController::class, 'store'])->middleware('auth');
+
+Route::get('/listmember', [MemberController::class, 'index'])->middleware('auth');
+Route::get('/createmember', [MemberController::class, 'create'])->middleware('auth');
+Route::post('/createmember', [MemberController::class, 'store'])->middleware('auth');

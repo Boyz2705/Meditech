@@ -5,62 +5,41 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Requests\UpdateMemberRequest;
+use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('member.index', [
+            "title" => "Meditech | Daftar Member",
+            "member" => Member::paginate(10)
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('member.createmember', [
+            "title" => "Meditech | Member Baru"
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreMemberRequest $request)
-    {
-        //
-    }
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            "name" => 'required|max:255',
+            "email" => 'required|unique:members',
+            "username" => 'required|unique:members',
+            "gambar" => 'image|file|max:10240',
+            "alamat" => 'required|max:255',
+            "gender" => 'required',
+            "notelp" => 'required'
+        ]);
+        $validatedData["password"] = bcrypt('123456');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Member $member)
-    {
-        //
-    }
+        if($request->file('gambar')){
+            $validatedData['gambar'] = $request->file('gambar')->store('profile');
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Member $member)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateMemberRequest $request, Member $member)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Member $member)
-    {
-        //
+        $member = Member::create($validatedData);
+        return back()->with('success', "Pasien $member->name berhasil ditambahkan menjadi member");
     }
 }

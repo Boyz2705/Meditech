@@ -110,7 +110,7 @@
                     <div class="collapse" id="master">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"><a class="nav-link" href="/listpegawai">Pegawai</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Member</a>
+                            <li class="nav-item"><a class="nav-link" href="/listmember">Member</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="/listobat">Obat</a></li>
                         </ul>
