@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\User;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Requests\UpdateMemberRequest;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class MemberController extends Controller
 
     public function create(){
         return view('member.createmember', [
-            "title" => "Meditech | Member Baru"
+            "title" => "Meditech | Member Baru",
+            "pegawai" => User::where('roleid', 0)->get()
         ]);
     }
 
@@ -34,6 +36,7 @@ class MemberController extends Controller
             "notelp" => 'required'
         ]);
         $validatedData["password"] = bcrypt('123456');
+        $validatedData["id_user"] = $request->id_user;
 
         if($request->file('gambar')){
             $validatedData['gambar'] = $request->file('gambar')->store('profile');

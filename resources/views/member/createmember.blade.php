@@ -17,6 +17,21 @@
                     <h4 class="card-title text-center">Member Baru Meditech</h4>
                     <form action="/createmember" method="POST" enctype="multipart/form-data">
                         @csrf
+
+                        @can('admin')
+                            <div class="form-group">
+                                <label for="gender">Pegawai yang bertanggung jawab</label>
+                                <select class="form-control" style="width:100%" id="id_user" name="id_user">
+                                    <option selected="selected" disabled="disabled">Pilih Pegawai</option>
+                                    @foreach ($pegawai as $peg)
+                                        <option value="{{ $peg->id }}">{{ ucwords($peg->name) }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @else
+                            <input type="hidden" name="id_user" value="{{ auth()->user()->id }}">
+                        @endcan
+
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
@@ -62,7 +77,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nama">No Whatsapp</label>
+                            <label for="nama">Alamat</label>
                             <input type="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat"
                                 name="alamat" placeholder="Alamat Member" required value="{{ old('alamat') }}">
                             @error('alamat')
