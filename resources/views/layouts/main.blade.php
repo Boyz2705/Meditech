@@ -127,7 +127,7 @@
                     </a>
                     <div class="collapse" id="transaksi">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="/dash-donasi">Pembelian Obat</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Pembelian Obat</a></li>
                         </ul>
                     </div>
                 </li>
@@ -168,7 +168,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item preview-item" href="">
+                                <a class="dropdown-item preview-item" href="/createmember">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-account-switch text-primary"></i>
@@ -176,6 +176,18 @@
                                     </div>
                                     <div class="preview-item-content">
                                         <p class="preview-subject ellipsis mb-1">Member Meditech</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item preview-item" href="/createobat">
+                                    <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-dark rounded-circle">
+                                            <i class="mdi mdi-hospital text-danger"></i>
+                                        </div>
+                                    </div>
+                                    <div class="preview-item-content">
+                                        <p class="preview-subject ellipsis mb-1">Obat Meditech</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
