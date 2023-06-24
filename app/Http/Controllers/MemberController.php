@@ -29,13 +29,11 @@ class MemberController extends Controller
         $validatedData = $request->validate([
             "name" => 'required|max:255',
             "email" => 'required|unique:members',
-            "username" => 'required|unique:members',
             "gambar" => 'image|file|max:10240',
             "alamat" => 'required|max:255',
             "gender" => 'required',
             "notelp" => 'required'
         ]);
-        $validatedData["password"] = bcrypt('123456');
         $validatedData["id_user"] = $request->id_user;
 
         if($request->file('gambar')){
