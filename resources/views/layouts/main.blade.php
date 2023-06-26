@@ -290,17 +290,15 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                            <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                                 <div class="navbar-profile">
-                                    {{-- @if (auth()->user()->gambar)
+                                    @if (auth()->user()->gambar)
                                         <img class="img-xs rounded-circle"
                                             src="{{ asset('storage/' . auth()->user()->gambar) }}">
                                     @else
                                         <img class="img-xs rounded-circle"
                                             src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
-                                    @endif --}}
-                                    <img class="img-xs rounded-circle"
-                                            src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
+                                    @endif
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ auth()->user()->name }}
                                     </p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
