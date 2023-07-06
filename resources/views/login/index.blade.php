@@ -2,27 +2,27 @@
 @section('content')
     <section class="sample-page">
         <div class="container" data-aos="fade-up">
+            @if (session()->has('success'))
+                <div class="row justify-content-center">
+                    <div class="alert alert-success alert-dismissible text-center col-lg-11 fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            @endif
+
+            @if (session()->has('loginError'))
+                <div class="row justify-content-center">
+                    <div class="alert alert-danger alert-dismissible text-center col-lg-11 fade show"
+                        role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-12 grid-margin stretch-card">
-                    @if (session()->has('success'))
-                        <div class="row justify-content-center">
-                            <div class="alert alert-success alert-dismissible text-center col-lg-11 fade show" role="alert">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        </div>
-                    @endif
-
-                    @if (session()->has('loginError'))
-                        <div class="row justify-content-center">
-                            <div class="alert alert-danger alert-dismissible text-center col-lg-11 fade show"
-                                role="alert">
-                                {{ session('loginError') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        </div>
-                    @endif
 
                     <div class="card card-5">
                         <div class="card-heading">

@@ -55,17 +55,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nama">Username</label>
-                            <input type="username" class="form-control @error('username') is-invalid @enderror" id="username"
-                                name="username" placeholder="Username Member" required value="{{ old('username') }}">
-                            @error('username')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
                             <label for="nama">No Whatsapp</label>
                             <input type="notelp" class="form-control @error('notelp') is-invalid @enderror" id="notelp"
                                 name="notelp" placeholder="Whatsapp Member" required value="{{ old('notelp') }}">
