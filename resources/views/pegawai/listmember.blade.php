@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="title mb-4">
-        <h1 class="text-center" style="font-family:courier new; font-style: initial;">Daftar Member Meditech</h1>
+        <h1 class="text-center" style="font-family:courier new; font-style: initial;">Daftar Member {{ ucwords($user->name) }}</h1>
     </div>
     <div class="row ">
         <div class="col-12 grid-margin">
@@ -15,15 +15,9 @@
 
             <div class="card">
                 <div class="card-body">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-start">
                         <div class="col-lg-6" style="padding-left: 30px">
                             <h4 class="card-title">Data member</h4>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-end" style="padding-right: 30px">
-                            <a class="btn btn-primary"
-                                style="margin-right: 5px; border-radius: 5px; background-color: rgb(11, 136, 156); padding: 12px 27px 12px 27px"
-                                href="/createmember"><span style="font-size: 20px; color:rgb(245, 230, 17)">+</span>
-                                Daftarkan member baru</a>
                         </div>
                     </div>
                     <div class="row justify-content-start">

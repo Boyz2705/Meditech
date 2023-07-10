@@ -15,16 +15,18 @@
 
             <div class="card">
                 <div class="card-body">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-start">
                         <div class="col-lg-6" style="padding-left: 30px">
                             <h4 class="card-title">Data pegawai</h4>
                         </div>
-                        <div class="col-lg-6 d-flex justify-content-end" style="padding-right: 30px">
-                            <a class="btn btn-primary"
-                                style="margin-right: 5px; border-radius: 5px; background-color: rgb(11, 136, 156); padding: 12px 27px 12px 27px"
-                                href="/createpegawaibaru"><span style="font-size: 20px; color:rgb(245, 230, 17)">+</span>
-                                Daftarkan pegawai baru</a>
-                        </div>
+                        @can('admin')
+                            <div class="col-lg-6 d-flex justify-content-end" style="padding-right: 30px">
+                                <a class="btn btn-primary"
+                                    style="margin-right: 5px; border-radius: 5px; background-color: rgb(11, 136, 156); padding: 12px 27px 12px 27px"
+                                    href="/createpegawaibaru"><span style="font-size: 20px; color:rgb(245, 230, 17)">+</span>
+                                    Daftarkan pegawai baru</a>
+                            </div>
+                        @endcan
                     </div>
                     <div class="row justify-content-start">
                         <div class="col-lg-6" style="padding-left: 30px">
@@ -43,7 +45,7 @@
                                     <th> Email </th>
                                     <th> Username </th>
                                     <th> Gender </th>
-                                    <th> Role pegawai </th>
+                                    <th> List Member </th>
                                     <th> Status kepegawaian </th>
                                 </tr>
                             </thead>
@@ -81,11 +83,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($peg->roleid == true)
-                                        Admin
-                                    @else
-                                        Wong biasa
-                                    @endif
+                                    <a class="btn px-4 py-2" style="background-color: #0a1f9a; color: white" href="/mymember/{{ $peg->username }}">test</a>
                                 </td>
                                 <td>
                                     @if ($peg->status == true)
@@ -100,7 +98,7 @@
                         @endforeach
                         </tbody>
                         </table>
-                    @endif
+                        @endif
                         <br>
                         <div class="erga d-flex justify-content-center">
                             {{ $pegawai->links() }}

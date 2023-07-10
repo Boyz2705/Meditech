@@ -156,17 +156,19 @@
                                 <h6 class="p-3 mb-0">Data Master</h6>
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item preview-item" href="/createpegawaibaru">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-account-plus text-success"></i>
+                                @can('admin')
+                                    <a class="dropdown-item preview-item" href="/createpegawaibaru">
+                                        <div class="preview-thumbnail">
+                                            <div class="preview-icon bg-dark rounded-circle">
+                                                <i class="mdi mdi-account-plus text-success"></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="preview-subject ellipsis mb-1">Pegawai Baru</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
+                                        <div class="preview-item-content">
+                                            <p class="preview-subject ellipsis mb-1">Pegawai Baru</p>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                @endcan
 
                                 <a class="dropdown-item preview-item" href="/createmember">
                                     <div class="preview-thumbnail">
