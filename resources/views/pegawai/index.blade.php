@@ -83,7 +83,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a class="btn px-4 py-2" style="background-color: #0a1f9a; color: white" href="/mymember/{{ $peg->username }}">test</a>
+                                    <a class="btn px-4 py-2" style="background-color: #0a1f9a; color: white" href="/mymember/{{ $peg->username }}">Lihat</a>
                                 </td>
                                 <td>
                                     @if ($peg->status == true)

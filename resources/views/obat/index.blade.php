@@ -39,8 +39,7 @@
                                     <th>
                                         <strong>No</strong>
                                     </th>
-                                    <th> Nama obat</th>
-                                    <th> PPJ </th>
+                                    <th> Nama obat </th>
                                     <th> Harga satuan </th>
                                     <th> Expired </th>
                                     <th> Gambar </th>
@@ -67,7 +66,6 @@
                                 <td>
                                     <span class="pl-2">{{ $ob->nama }}</span>
                                 </td>
-                                <td> {{ $ob->user->name }}</td>
                                 <td> Rp {{ number_format($ob->harga, 2, ',','.') }} </td>
                                 <td> {{ \Carbon\Carbon::parse($ob->expired)->translatedFormat('l, d F Y') }} </td>
                                 <td>
@@ -85,7 +83,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     @if ($ob->gambar)
-                                                        <img class="img-fluid" src="{{ asset('storage/'.$ob->gambar) }}" alt="">
+                                                        <img class="img-fluid" src="{{ asset('storage/'.$ob->gambar) }}" alt="{{ $ob->nama }}">
                                                     @else
                                                         <h4>Foto tidak tersedia pada obat ini</h4>
                                                     @endif
