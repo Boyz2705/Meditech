@@ -13,6 +13,14 @@
                 </div>
             @endif
 
+            @if (session()->has('error'))
+                <div class="row justify-content-end">
+                    <div class="alert alert-danger col-lg-3" role="alert">
+                        {{ session('error') }}
+                    </div>
+                </div>
+            @endif
+
             <div class="card">
                 <div class="card-body">
                     <div class="row justify-content-center">
@@ -83,7 +91,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     @if ($ob->gambar)
-                                                        <img class="img-fluid" src="{{ asset('storage/'.$ob->gambar) }}" alt="{{ $ob->nama }}">
+                                                        <img class="img-fluid" src="{{ asset('storage/'.$ob->gambar) }}" style="width: 200px; height: 200px;" alt="{{ $ob->nama }}">
                                                     @else
                                                         <h4>Foto tidak tersedia pada obat ini</h4>
                                                     @endif
@@ -98,8 +106,19 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <button class="btn text-white" style="background-color: #0e5c29; padding: 10px 25px 10px 25px">Edit</button>
-                                    <button class="btn text-white" style="background-color: #721009; padding: 10px 22px 10px 22px">Hapus</button>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-4">
+                                            <a href="/updateobat/{{ $ob->slug }}" class="btn text-white" style="background-color: #0e5c29; padding: 10px 25px 10px 25px">Edit</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <form action="/deleteobat" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $ob->id }}">
+                                                <input type="hidden" name="oldImage" value="{{ $ob->gambar }}">
+                                                <button class="btn text-white" style="background-color: #721009; padding: 10px 22px 10px 22px">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

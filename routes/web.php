@@ -32,6 +32,9 @@ Route::get('/mymember/{username}', [PegawaiController::class, 'listmember'])->mi
 Route::get('/listobat', [ObatController::class, 'index'])->middleware('auth');
 Route::get('/createobat', [ObatController::class, 'create'])->middleware('auth');
 Route::post('/createobat', [ObatController::class, 'store'])->middleware('auth');
+Route::post('/deleteobat', [ObatController::class, 'delete'])->middleware('auth');
+Route::get('/updateobat/{slug}', [ObatController::class, 'edit'])->middleware('auth');
+Route::post('/updateobat', [ObatController::class, 'update'])->middleware('auth');
 
 Route::get('/listmember', [MemberController::class, 'index'])->middleware('auth');
 Route::get('/createmember', [MemberController::class, 'create'])->middleware('auth');
