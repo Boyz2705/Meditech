@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
@@ -39,3 +40,6 @@ Route::post('/updateobat', [ObatController::class, 'update'])->middleware('auth'
 Route::get('/listmember', [MemberController::class, 'index'])->middleware('auth');
 Route::get('/createmember', [MemberController::class, 'create'])->middleware('auth');
 Route::post('/createmember', [MemberController::class, 'store'])->middleware('auth');
+
+Route::get('/historychat', [ChatController::class, 'index'])->middleware('auth');
+Route::get('/historychat/{id}', [ChatController::class, 'detail'])->middleware('auth');
