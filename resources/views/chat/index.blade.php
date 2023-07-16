@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">
-                <div class="card chat-app" style="height: 600px">
+                <div class="card chat-app" style="height: 600px;">
                     <div id="plist" class="people-list" style="background-color: #81A3BC; height: 600px;">
                         <form action="/historychat">
                             <div class="input-group">

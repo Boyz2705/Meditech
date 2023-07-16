@@ -36,7 +36,7 @@
                                 name="harga" id="txtExampleBoxOne" onkeypress="return number(event )"
                                 onBlur="formatCurrency(this, 'Rp ', 'blur');" onkeyup="formatCurrency(this, 'Rp ');"
                                 data-inputmask="'alias': 'numeric', 'autoGroup' :true, 'digitsOptional':false, 'removeMaskOnSubmit' : true, 'autoUnmask' : true"
-                                placeholder="Rp 1.000.000,00" required value="{{ old('harga', $obat->harga) }}">
+                                placeholder="Rp 1.000.000,00" required value="Rp {{ old('harga', number_format($obat->harga, 2, ',','.')) }}">
                             @error('harga')
                                 <div class="invalid-feedback">
                                     {{ $message }}

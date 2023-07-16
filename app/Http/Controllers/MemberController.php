@@ -32,7 +32,7 @@ class MemberController extends Controller
             "gambar" => 'image|file|max:10240',
             "alamat" => 'required|max:255',
             "gender" => 'required',
-            "notelp" => 'required|unique:members'
+            "notelp" => 'required|numeric|unique:members|unique:users'
         ]);
         $validatedData["id_user"] = $request->id_user;
 

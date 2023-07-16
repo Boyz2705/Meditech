@@ -56,8 +56,13 @@
 
                         <div class="form-group">
                             <label for="nama">No Whatsapp</label>
-                            <input type="notelp" class="form-control @error('notelp') is-invalid @enderror" id="notelp"
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text text-white">+62</span>
+                                </div>
+                                <input type="notelp" class="form-control @error('notelp') is-invalid @enderror" id="notelp"
                                 name="notelp" placeholder="Whatsapp Member" required value="{{ old('notelp') }}">
+                            </div>
                             @error('notelp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -94,7 +99,8 @@
                                     style="background-color: #2A3038; height: 2.875rem; padding: 0.56rem 0.75rem; font-size: 0.875rem; font-weight: 400; color: #495057; border-radius: 2px"
                                     placeholder="Upload Image" value="{{ old('gambar') }}">
                             </div>
-                            <small style="color: rgb(220, 65, 65)">* Abaikan bila tidak ingin menambahkan foto profil</small>
+                            <small style="color: rgb(220, 65, 65)">* Abaikan bila tidak ingin menambahkan foto
+                                profil</small>
                             @error('gambar')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -111,7 +117,8 @@
                             </div>
                             <div class="col d-flex justify-content-end">
                                 <a href="/listmember" class="btn btn-light"
-                                    style="margin-right: 5px; border-radius: 5px; background-color: rgb(196, 106, 16); color: white; padding: 12px 27px 12px 27px">Lihat Daftar Member</a>
+                                    style="margin-right: 5px; border-radius: 5px; background-color: rgb(196, 106, 16); color: white; padding: 12px 27px 12px 27px">Lihat
+                                    Daftar Member</a>
                             </div>
                         </div>
                     </form>

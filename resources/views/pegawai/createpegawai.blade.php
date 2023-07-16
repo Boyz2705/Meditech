@@ -52,8 +52,13 @@
 
                         <div class="form-group">
                             <label for="nama">No Whatsapp</label>
-                            <input type="notelp" class="form-control @error('notelp') is-invalid @enderror" id="notelp"
-                                name="notelp" placeholder="Whatsapp Pegawai" required value="{{ old('notelp') }}">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text text-white">+62</span>
+                                </div>
+                                <input type="notelp" class="form-control @error('notelp') is-invalid @enderror" id="notelp"
+                                name="notelp" placeholder="Whatsapp Member" required value="{{ old('notelp') }}">
+                            </div>
                             @error('notelp')
                                 <div class="invalid-feedback">
                                     {{ $message }}

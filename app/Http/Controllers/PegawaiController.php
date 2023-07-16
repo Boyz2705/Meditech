@@ -28,7 +28,7 @@ class PegawaiController extends Controller
             "username" => 'required|unique:users',
             "gambar" => 'image|file|max:10240',
             "gender" => 'required',
-            "notelp" => 'required|unique:users'
+            "notelp" => 'required|unique:users|unique:members'
         ]);
         $validatedData["password"] = bcrypt('123456');
 
