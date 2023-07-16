@@ -99,7 +99,7 @@
                                         @if ($ch->id_pengirim == auth()->user()->id)
                                             <li class="clearfix">
                                                 <div class="message-data text-right">
-                                                    <span class="message-data-time">{{ \Carbon\Carbon::parse($ch->created_at)->translatedFormat('h:i, l') }}</span>
+                                                    <span class="message-data-time">{{ \Carbon\Carbon::parse($ch->created_at)->translatedFormat('H:i, l') }}</span>
                                                     @if (auth()->user()->gender === 1)
                                                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
                                                     @else
@@ -111,7 +111,7 @@
                                         @else
                                             <li class="clearfix">
                                                 <div class="message-data">
-                                                    <span class="message-data-time">{{ \Carbon\Carbon::parse($ch->created_at)->translatedFormat('h:i, l') }}</span>
+                                                    <span class="message-data-time">{{ \Carbon\Carbon::parse($ch->created_at)->translatedFormat('H:i, l') }}</span>
                                                     @if ($uwong->gambar)
                                                         <img src="{{ asset('storage/' . $uwong->gambar) }}"
                                                             alt="{{ $uwong->name }}">
