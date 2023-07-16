@@ -6,7 +6,8 @@
         .form-control:focus {
             color: black;
         }
-        .form-control{
+
+        .form-control {
             color: black
         }
     </style>
@@ -16,13 +17,16 @@
         <div class="row clearfix">
             <div class="col-lg-12">
                 <div class="card chat-app" style="height: 600px">
-                    <div id="plist" class="people-list">
-                        <div class="input-group">
-                            <form action="/historychat">
-                                <input type="text" class="form-control" name="search" value="{{ request('search') }}" style="background-color: white;"
-                                    placeholder="Search...">
-                            </form>
-                        </div>
+                    <div id="plist" class="people-list" style="background-color: #81A3BC; height: 600px;">
+                        <form action="/historychat">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" value="{{ request('search') }}"
+                                    style="background-color: white;" placeholder="Search...">
+                                <div class="input-group-prepend" style="background-color: grey">
+                                    <button class="input-group-text"><i class="fa fa-search text-dark"></i></button>
+                                </div>
+                            </div>
+                        </form>
                         <ul class="list-unstyled chat-list mt-2 mb-0">
                             <li class="clearfix active">
                                 <img src="{{ asset('img/history.png') }}" alt="icon">
@@ -55,18 +59,19 @@
                                     <div class="about">
                                         <div class="name text-dark">Member tidak ditemukan</div>
                                     </div>
-                            </li>
+                                </li>
                                 <hr style="border: 1px solid black;">
                             @endif
                         </ul>
                     </div>
                     <div class="chat">
-                        <div class="chat-header2 clearfix">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="{{ asset('img/meditech.png') }}" alt="avatar">
+                        <div class="chat-header2 clearfix" style="background-color: #81A3BC">
+                            <div class="row d-flex justify-content-end">
+                                <div class="col-2">
+                                    <div class="text-right">
+                                        <img src="{{ asset('img/meditech.png') }}" alt="avatar">
+                                    </div>
                                     <div class="chat-about text-dark">
-                                        <h6 class="m-b-0">MEDITECH</h6>
                                         {{-- <small>Last seen: 2 hours ago</small> --}}
                                     </div>
                                 </div>
@@ -76,8 +81,8 @@
                             <ul class="m-b-0" style="margin-top: 25%">
                                 <div class="home text-dark row d-flex justify-content-center">
                                     <div class="col-9">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi mi, eleifend
-                                        tempus mauris vitae, luctus maximus tellus. Nullam volutpat.
+                                        uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo
+                                        uyauyapo uyauyapo uyauyapo uyauyapo uyauyapo
                                     </div>
                                 </div>
                             </ul>
