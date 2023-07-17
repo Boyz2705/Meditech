@@ -22,6 +22,8 @@ class PegawaiController extends Controller
     }
 
     public function store(Request $request){
+        $notelp = "62".$request->notelp;
+        $request["notelp"] = $notelp;
         $validatedData = $request->validate([
             "name" => 'required|max:255',
             "email" => 'required|unique:users',
@@ -31,7 +33,6 @@ class PegawaiController extends Controller
             "notelp" => 'required|unique:users|unique:members'
         ]);
         $validatedData["password"] = bcrypt('123456');
-
         if($request->file('gambar')){
             $validatedData['gambar'] = $request->file('gambar')->store('profile');
         }

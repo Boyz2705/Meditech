@@ -140,9 +140,9 @@
                             @endforeach
                         @else
                             <ul class="m-b-0" style="margin-top: 25%">
-                                <div class="home text-dark row d-flex justify-content-center">
-                                    <div class="col-5">
-                                        Belum ada pesan dengan member <span style="font-style: italic">{{ ucwords($uwong->name) }}</span>
+                                <div class="home text-dark text-center row d-flex justify-content-center">
+                                    <div class="col-5">Belum ada obrolan dengan member <span
+                                            style="font-style: italic">{{ ucwords($uwong->name) }}</span>
                                     </div>
                                 </div>
                             </ul>
