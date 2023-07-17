@@ -44,9 +44,12 @@
                                     <th> Nama pegawai</th>
                                     <th> Email </th>
                                     <th> Username </th>
+                                    <th> No Whatsapp </th>
                                     <th> Gender </th>
-                                    <th> List Member </th>
-                                    <th> Status kepegawaian </th>
+                                    @can('admin')
+                                        <th> List Member </th>
+                                    @endcan
+                                    <th> Status Kepegawaian </th>
                                 </tr>
                             </thead>
 
@@ -71,6 +74,7 @@
                                 </td>
                                 <td> {{ $peg->email }} </td>
                                 <td> {{ $peg->username }} </td>
+                                <td> {{ $peg->notelp }} </td>
                                 <td>
                                     @if ($peg->gender !== null)
                                         @if ($peg->gender == true)
@@ -82,9 +86,11 @@
                                         -
                                     @endif
                                 </td>
-                                <td>
-                                    <a class="btn px-4 py-2" style="background-color: #0a1f9a; color: white" href="/mymember/{{ $peg->username }}">Lihat</a>
-                                </td>
+                                @can('admin')
+                                    <td>
+                                        <a class="btn px-4 py-2" style="background-color: #0a1f9a; color: white" href="/mymember/{{ $peg->username }}">Lihat</a>
+                                    </td>
+                                @endcan
                                 <td>
                                     @if ($peg->status == true)
                                         <div class="badge badge-outline-success"

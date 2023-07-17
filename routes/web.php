@@ -28,7 +28,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/listpegawai', [PegawaiController::class, 'index'])->middleware('auth');
 Route::get('/createpegawaibaru', [PegawaiController::class, 'create'])->middleware('admin');
 Route::post('/createpegawaibaru', [PegawaiController::class, 'store'])->middleware('admin');
-Route::get('/mymember/{username}', [PegawaiController::class, 'listmember'])->middleware('auth');
+Route::get('/mymember/{username}', [PegawaiController::class, 'listmember'])->middleware('admin');
 
 Route::get('/listobat', [ObatController::class, 'index'])->middleware('auth');
 Route::get('/createobat', [ObatController::class, 'create'])->middleware('auth');

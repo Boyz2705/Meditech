@@ -12,9 +12,14 @@ class MemberController extends Controller
 {
     public function index()
     {
+        if(auth()->user()->roleid === 1){
+            $member = Member::paginate(10);
+        }else{
+            $member = Member::where('id_user', auth()->user()->id)->paginate(10);
+        }
         return view('member.index', [
             "title" => "Meditech | Daftar Member",
-            "member" => Member::paginate(10)
+            "member" => $member
         ]);
     }
 
@@ -26,6 +31,8 @@ class MemberController extends Controller
     }
 
     public function store(Request $request){
+        $notelp = "62".$request->notelp;
+        $request["notelp"] = $notelp;
         $validatedData = $request->validate([
             "name" => 'required|max:255',
             "email" => 'required|unique:members',

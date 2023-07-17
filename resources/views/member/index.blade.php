@@ -17,7 +17,11 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-lg-6" style="padding-left: 30px">
-                            <h4 class="card-title">Data member</h4>
+                            @can('admin')
+                                <h4 class="card-title">Data member</h4>
+                            @else
+                                <h4 class="card-title">PPJ : {{ ucwords(auth()->user()->name) }}</h4>
+                            @endcan
                         </div>
                         <div class="col-lg-6 d-flex justify-content-end" style="padding-right: 30px">
                             <a class="btn btn-primary"
@@ -40,7 +44,9 @@
                                         <strong>No</strong>
                                     </th>
                                     <th> Nama member</th>
-                                    <th> PPJ </th>
+                                    @can('admin')
+                                        <th> PPJ </th>
+                                    @endcan
                                     <th> Email </th>
                                     <th> No WhatsApp </th>
                                     <th> Gender </th>
@@ -68,7 +74,9 @@
                                 <td>
                                     <span class="pl-2">{{ $mem->name }}</span>
                                 </td>
-                                <td> {{ $mem->user->name }} </td>
+                                @can('admin')
+                                    <td> {{ $mem->user->name }} </td>
+                                @endcan
                                 <td> {{ $mem->email }} </td>
                                 <td> {{ $mem->notelp }}</td>
                                 <td>
@@ -82,12 +90,12 @@
                                         -
                                     @endif
                                 </td>
-                                <td> {{ $mem->alamat }}</td>
+                                <td> {{ ucwords($mem->alamat) }}</td>
                                 <td>
                                     @if ($mem->status == true)
-                                        Member
+                                        Aktif
                                     @else
-                                        Non Member
+                                        Non Aktif
                                     @endif
                                 </td>
                             </tr>

@@ -127,7 +127,8 @@
                     </a>
                     <div class="collapse" id="transaksi">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="">Pembelian Obat</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Rekap Transaksi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Pemesanan Obat</a></li>
                         </ul>
                     </div>
                 </li>
@@ -397,6 +398,7 @@
     <script src="{{ asset('../../assets/js/file-upload.js') }}"></script>
     <script src="{{ asset('../../assets/js/typeahead.js') }}"></script>
     <script src="{{ asset('../../assets/js/select2.js') }}"></script>
+    @yield('js')
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->

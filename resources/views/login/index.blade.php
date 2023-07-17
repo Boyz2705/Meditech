@@ -55,7 +55,7 @@
                                         <div class="input-group">
                                             <input class="input--style-5 @error('password') is-invalid @enderror"
                                                 id="password" name="password" type="password"
-                                                placeholder="input placeholder" required>
+                                                placeholder="input password" required>
                                         </div>
                                     </div>
                                 </div>
